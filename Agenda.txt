@@ -1,0 +1,36 @@
+MongoDB Course contents :-
+#################################
+#################################
+Philosophy & Features: performance, JSON, BSON, fault tolerance, disaster recovery, horizontal scaling, and the Mongo shell
+CRUD: Create, Read, Update, and Delete operations
+Indexing: single key, compound, multi-key, mechanics, and performance
+Aggregation: pipeline, operators, memory usage, sort, skip, and limit
+Replication: configuration, oplog concepts, write concern, elections, failover, and deployment to multiple data centers
+Sharding: components, when to shard, balancing, shard keys, and hashed shard keys
+Application Administration: data files, journaling, authentication, and authorization
+Server Administration: performance analysis, storage engines, diagnostics and debugging, maintenance, backup, and recovery
+##################################
+Advance level MongoDB.
+##################################
+MongoDB Performance
+1.Introduction and Indexes
+2.Index Operations and CRUD Optimizations
+3.Performance on Clusters
+Spark and MongoDB
+MongoDB Cluster Management
+1: Cloud Manager
+2: Ops Manager
+MongoDB Atlas
+1.Introducing Atlas
+2.Scaling with Atlas
+3.Monitoring and Backup
+4.Wrapping Up
+MongoDB Advanced Deployment and Operations
+MongoDB Security
+1.Authentication
+2.Authorization and Encryption
+3.Auditing and Best Practices
+Diagnostics and Debugging
+1.Introduction and Tooling Overview
+2.Slow Queries
+3.Connectivity and Schema Design
