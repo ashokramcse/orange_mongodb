@@ -1,0 +1,55 @@
+db.course.insert({_id:"c001", courseName:"Robotics",duration:"2 years"});
+
+db.student.insert({_id:"s001", name:"Shyam", address:"chennai", courseRef:"c001"});
+
+db.institute.insert({_id:"1000",name:"NIIT",address:"Richmond Road"});
+
+db.course.update({_id:"c001"},{$set:{instRef:"1000"}});
+db.student.update({_id:"s001"},{$set:{instRef:"1000"}});
+db.student.update({_id:"s002"},{$set:{instRef:"1000"}});
+
+db.course.aggregate([
+    {
+      $lookup:
+        {
+          from: "student",
+          localField: "_id",
+          foreignField: "courseRef",
+          as: "result_join"
+        }
+   },
+
+   {
+     $out:"resultcoll"
+    }
+])
+
+------------------------------------------------
+db.student.aggregate(  [{
+        $lookup: {
+           from: "course",
+           localField: "courseRef",
+           foreignField: "_id",
+           as: "courseInfo"
+        }
+    },
+
+    {
+        $unwind: "$courseInfo"
+    },
+    {
+        $lookup: {
+           from: "institute",
+           localField: "instRef",
+           foreignField: "_id",
+           as: "instituteInfo"
+        }
+    }
+    ,
+
+    {
+        $unwind: "$instituteInfo"
+    }
+    
+    ])
+
